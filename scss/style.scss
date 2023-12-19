@@ -1,0 +1,105 @@
+@import "vars.scss";
+@import "mixin.scss";
+
+@include main;
+
+main {
+  background-color: $backgroundColor;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .card {
+    width: 20%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:first-of-type {
+      background-color: $orange;
+    }
+    &:nth-of-type(2) {
+      background-color: $cyan;
+    }
+    &:nth-of-type(3) {
+      background-color: $darkCyan;
+    }
+    .wrapper {
+      width: 60%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: flex-start;
+
+      h1 {
+        font-family: $headingFont;
+        color: $backgroundColor;
+      }
+      p {
+        font-family: $paragraphfont;
+        color: $paraColor;
+        font-size: calc($fontSize * 0.8);
+        line-height: 1.8em;
+      }
+    }
+  }
+}
+
+button {
+  padding: 1em 2.5em;
+  border-radius: 2.5em;
+}
+.sedanBtn {
+  color: $orange;
+  border: 1px solid $orange;
+  &:hover {
+    background-color: $orange;
+    color: $backgroundColor;
+    border: 1px solid $backgroundColor;
+    cursor: pointer;
+  }
+}
+.suvBtn {
+  color: $cyan;
+  border: 1px solid $cyan;
+  &:hover {
+    background-color: $cyan;
+    color: $backgroundColor;
+    border: 1px solid $backgroundColor;
+    cursor: pointer;
+  }
+}
+.luxaryBtn {
+  color: $darkCyan;
+  border: 1px solid $darkCyan;
+  &:hover {
+    background-color: $darkCyan;
+    color: $backgroundColor;
+    border: 1px solid $backgroundColor;
+    cursor: pointer;
+  }
+}
+@include laptop {
+  main {
+    .card {
+      width: 25%;
+    }
+  }
+}
+@include tablet {
+  main {
+    .card {
+      width: 30%;
+    }
+  }
+}
+@include mobile {
+  main {
+    flex-wrap: wrap;
+    .card {
+      width: 100%;
+    }
+  }
+}
